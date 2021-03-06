@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button routerLink = "/contacto">
+    Ir a contacto
+  </ion-button>
+
+  <ion-button routerLink = "/nosotros">
+    Ir a nosotros
+  </ion-button>
+
+  <ion-item>
+    <ion-label position="stacked">Nombre:</ion-label>
+    <!-- ngModel mantiene actualizada ambos archivos (html y ts) y sus datos,
+    los cambios se ven reflejados en ambos -->
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="fixed">Celular:</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Email:</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+
+  <ion-button color="success" (click)=guardarDatos()>
+    Guardar
+  </ion-button>
+
+  <ion-list>
+    <!-- Recorre la lista de usuarios -->
+    <ion-item *ngFor="let usuario of usuarios">
+      <!-- Rescata el valor del let -->
+      <ion-label>{{usuario.nombre}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
