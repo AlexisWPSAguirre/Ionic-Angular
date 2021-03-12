@@ -6,12 +6,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-button routerLink = "/contacto">
+<ion-content  [fullscreen]="true">
+  <ion-button color="medium" routerLink = "/contacto">
     Ir a contacto
   </ion-button>
 
-  <ion-button routerLink = "/nosotros">
+  <ion-button color="medium" routerLink = "/nosotros">
     Ir a nosotros
   </ion-button>
 
@@ -23,24 +23,40 @@
   </ion-item>
 
   <ion-item>
-    <ion-label position="fixed">Celular:</ion-label>
-    <ion-input></ion-input>
+    <ion-label position="stacked">Apellido</ion-label>
+    <ion-input [(ngModel)]="apellido" ></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="floating">Email:</ion-label>
-    <ion-input></ion-input>
+    <ion-label position="stacked">Celular</ion-label>
+    <ion-input [(ngModel)]="celular"></ion-input>
   </ion-item>
 
-  <ion-button color="success" (click)=guardarDatos()>
-    Guardar
-  </ion-button>
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+    <ion-button color="success" (click)=guardarDatos()>
+      Guardar
+    </ion-button>
+
 
   <ion-list>
     <!-- Recorre la lista de usuarios -->
     <ion-item *ngFor="let usuario of usuarios">
-      <!-- Rescata el valor del let -->
+      <!-- Rescata el valor del objeto -->
       <ion-label>{{usuario.nombre}}</ion-label>
+      <ion-label>{{usuario.apellido}}</ion-label>
+      <ion-label>{{usuario.celular}}</ion-label>
+      <ion-label>{{usuario.email}}</ion-label>
+
+      <ion-button color="success" (click)= editarRegistro(usuario)>
+        Editar
+      </ion-button>
+      <ion-button color="danger" (click)= eliminarRegistro(usuario)>
+        Eliminar
+      </ion-button>
     </ion-item>
   </ion-list>
 
