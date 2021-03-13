@@ -1,11 +1,36 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>nosotros</ion-title>
+    <!-- Boton que usa paginas apiladas para volver a la anterior-->
+    <ion-buttons slot="start">
+      <ion-back-button>
+
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Operaciones Matematicas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button routerLink = "/home">
-    Volver
+  <ion-item>
+    <ion-label position="stacked">Primer número</ion-label>
+    <ion-input [(ngModel)]="num1"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Operaciones</ion-label>
+    <ion-input [(ngModel)]="operacion"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Segundo número</ion-label>
+    <ion-input [(ngModel)]="num2"></ion-input>
+  </ion-item>
+  <ion-button (click)=operar()>
+    Calcular
   </ion-button>
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        {{mensaje}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -6,12 +6,17 @@
 
       </ion-back-button>
     </ion-buttons>
-    <ion-title>contacto</ion-title>
+    <ion-title>Saludo</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-button routerLink = "/home">
-    Volver
+  <ion-item>
+    <ion-label position="stacked">Ingresa tu nombre</ion-label>
+    <ion-input [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <ion-button  (click)=alertaNombre()>
+    <ion-icon name="hand-right-outline"></ion-icon> 
+    Saludar
   </ion-button>
 </ion-content>
