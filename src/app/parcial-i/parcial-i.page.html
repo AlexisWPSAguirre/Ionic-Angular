@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+  
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>Primer Parcial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-input [(ngModel)]="input"></ion-input>
+  </ion-item>
+  <ion-button color="medium" (click)="concatenar(0)">
+    0
+  </ion-button>
+  <ion-button color="medium" (click)="concatenar(1)">
+    1
+  </ion-button>
+  <ion-button color="medium" (click)="concatenar(2)">
+    2
+  </ion-button>
+  <ion-button color="medium" (click)="concatenar(3)">
+    3
+  </ion-button>
+  <ion-button color="medium" (click)="concatenar(4)">
+    4
+  </ion-button>
+  <ion-button color="medium" (click)="concatenar(5)">
+    5
+  </ion-button>
+  <ion-button color="medium" (click)="concatenar(6)">
+    6
+  </ion-button>
+  <ion-button color="medium" (click)="concatenar(7)">
+    7
+  </ion-button>
+  <ion-button color="medium" (click)="concatenar(8)">
+    8
+  </ion-button>
+  <ion-button color="medium" (click)="concatenar(9)">
+    9
+  </ion-button>
+  <ion-button color="medium" (click)="Operadores('+')">
+    +
+  </ion-button>
+  <ion-button color="medium" (click)="Operadores('-')">
+    -
+  </ion-button>
+  <ion-button color="medium" (click)="Operadores('*')">
+    *
+  </ion-button>
+  <ion-button color="medium" (click)="Operadores('/')">
+    /
+  </ion-button>
+  <ion-button color="medium" (click)="operar()">
+    =
+  </ion-button>
+  <ion-button color="medium" (click)="borrar()">
+    <=
+  </ion-button>
+
+</ion-content>
