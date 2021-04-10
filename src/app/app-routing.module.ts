@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'parcial-i',
     loadChildren: () => import('./parcial-i/parcial-i.module').then( m => m.ParcialIPageModule)
   },
+  {
+    path: 'storage',
+    loadChildren: () => import('./storage/storage.module').then( m => m.StoragePageModule)
+  },
 ];
 
 @NgModule({

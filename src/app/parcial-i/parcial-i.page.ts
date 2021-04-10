@@ -1,3 +1,4 @@
+import { ArrayType } from '@angular/compiler';
 import { stringify } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 
@@ -22,16 +23,16 @@ export class ParcialIPage implements OnInit {
     switch(boton)
     {
       case '+':
-        this.operacion.push('+')
+        this.operacion.push({op: '+', value: 2})
       break;
       case '-':
-        this.operacion.push('-')
+        this.operacion.push({op: '-', value: 2})
       break;
       case '*':
-        this.operacion.push('*')
+        this.operacion.push({op: '*', value: 1})
       break;
       case '/':
-        this.operacion.push('/')
+        this.operacion.push({op: '/', value: 1})
       break;
       default:
       break;
@@ -53,26 +54,31 @@ export class ParcialIPage implements OnInit {
   {
     let char = this.input.slice(-1)
     this.input = this.input.slice(0,-1)
-    console.log(this.input)
     switch(char)
     {
       case '+' || '-' || '/' || '*':
-        console.log(this.operacion[this.operacion.length-1])
         this.operacion.splice(this.operacion.length,1)
-        console.log(this.operacion)
       break;
 
       default:
-        console.log(this.numbers[this.numbers.length-1])
         this.numbers.splice(this.numbers.length-1,1)
-        console.log(this.numbers)
       break;
     }
   }
+
   operar()
   {
+    this.operacion.sort(function(a,b) {
+      if (a.value > b.value) {
+        return 1;
+      }
+      if (a.value < b.value) {
+        return -1;
+      }
+      return 0;
+    })
     let resultado = 0
-    switch(this.operacion[0])
+    switch(this.operacion[0]['op'])
       {
         case '+':
           resultado = this.numbers[0] + this.numbers[1]

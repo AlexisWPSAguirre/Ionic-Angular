@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>
+  
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>storage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="stacked">Ingrese texto a Guardar</ion-label>
+    <ion-input [(ngModel)]="txtStorage"></ion-input>
+  </ion-item>
+  <ion-button (click)=saveData()> Save </ion-button>
+  <ion-item>
+    <p>El Nombre almacenado desde saludo es: {{nombre}}</p>
+  </ion-item> 
+</ion-content>
