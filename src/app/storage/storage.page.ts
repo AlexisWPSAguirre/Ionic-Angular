@@ -44,5 +44,6 @@ export class StoragePage implements OnInit {
   async saveData() {
     await this.storage.set('textoAlmacenado', this.txtStorage);
     this.txtStorage = await this.storage.get('textoAlmacenado');
+    console.log(this.storage)
   }
 }

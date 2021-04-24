@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'storage',
     loadChildren: () => import('./storage/storage.module').then( m => m.StoragePageModule)
+  },  {
+    path: 'financieros',
+    loadChildren: () => import('./financieros/financieros.module').then( m => m.FinancierosPageModule)
   },
+
 ];
 
 @NgModule({
